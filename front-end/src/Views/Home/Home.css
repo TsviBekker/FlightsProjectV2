@@ -1,0 +1,12 @@
+main {
+  margin: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
