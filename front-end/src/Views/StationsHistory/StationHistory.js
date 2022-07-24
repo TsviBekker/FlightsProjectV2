@@ -37,18 +37,21 @@ export const StationHistory = ({ station }) => {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             {station.name} History
           </Typography>
-          <table>
-            <thead>
-              <tr>
-                <th>flight id</th>
-                <th>Code</th>
-                <th>Entered At</th>
-                <th>Left At</th>
-              </tr>
-            </thead>
-            {history.length === 0
-              ? "NO HISTORY FOR NOW..."
-              : history.map((h) => {
+
+          {history.length === 0 ? (
+            <h2>"NO HISTORY FOR NOW..."</h2>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>flight id</th>
+                  <th>Code</th>
+                  <th>Entered At</th>
+                  <th>Left At</th>
+                </tr>
+              </thead>
+              <tbody>
+                {history.map((h) => {
                   return (
                     <tr>
                       <td>{h.flight.flightId}</td>
@@ -58,7 +61,9 @@ export const StationHistory = ({ station }) => {
                     </tr>
                   );
                 })}
-          </table>
+              </tbody>
+            </table>
+          )}
         </Box>
       </Modal>
     </div>

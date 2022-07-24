@@ -60,3 +60,10 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
   border-bottom: 2px solid #060606;
 }
+
+/* .station-available{
+  color:green;
+}
+.station-unavailable{
+  color:red;
+} */
