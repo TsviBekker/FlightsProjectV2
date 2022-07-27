@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Operations } from "../Constants/Consts";
 import { formatDateTime } from "../Utils/Utils";
 import { Loader } from "../Components/Loader/Loader";
+import { FaPlane } from "react-icons/fa";
 
 export const FlightHistory = ({ type }) => {
   const [history, setHistory] = useState([]);
@@ -40,7 +41,9 @@ export const FlightHistory = ({ type }) => {
             <table>
               <thead>
                 <th colSpan={4}>
-                  <p style={{ margin: "0" }}>Flight: {flight}</p>
+                  <p style={{ margin: "0" }}>
+                    <FaPlane /> Flight: {flight} <FaPlane />
+                  </p>
                 </th>
                 <tr>
                   <th>Station</th>

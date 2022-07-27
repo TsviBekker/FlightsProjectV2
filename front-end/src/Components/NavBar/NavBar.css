@@ -1,16 +1,37 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .nav {
-  background-color: #89cff0;
+  background: rgb(137, 207, 240);
+  background: radial-gradient(
+    circle,
+    rgba(137, 207, 240, 1) 50%,
+    rgba(53, 71, 226, 0.42947601403842783) 100%
+  );
   color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
+  height: 10vh;
+  position: sticky;
+  top: 0;
 }
 
 .site-title {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
+  display: flex;
+  gap: 0.5rem;
+  cursor: default;
 }
 
 .nav a {
@@ -22,12 +43,20 @@
   padding: 0.5rem;
 }
 
-.active {
-  color: #b03570;
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.docu {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 .nav li:hover {
-  color: darkblue;
+  color: #b03570;
 }
 
 .nav ul {
@@ -35,5 +64,11 @@
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

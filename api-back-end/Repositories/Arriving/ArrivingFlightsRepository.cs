@@ -1,6 +1,7 @@
 ﻿using api_back_end.Context;
 using api_back_end.Context.Models;
 using back_end_api.Repository.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace back_end_api.Repository.Arriving
 {
@@ -10,9 +11,9 @@ namespace back_end_api.Repository.Arriving
         {
         }
 
-        public IEnumerable<ArrivingFlight> GetActiveFlights()
+        public async Task<IEnumerable<ArrivingFlight>> GetActiveFlights()
         {
-            return context.ArrivingFlights.Where(af => af.LeaveDate == null);
+            return await context.ArrivingFlights.Where(af => af.LeaveDate == null).ToListAsync();
         }
     }
 }

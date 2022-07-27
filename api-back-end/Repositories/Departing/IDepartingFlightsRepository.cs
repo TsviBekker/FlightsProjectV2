@@ -5,7 +5,7 @@ namespace back_end_api.Repository.Departing
 {
     public interface IDepartingFlightsRepository : IGenericRepository<DepartingFlight>
     {
-        IEnumerable<DepartingFlight> GetActiveFlights();
+        Task<IEnumerable<DepartingFlight>> GetActiveFlights();
 
     }
 }

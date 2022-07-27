@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import diagram1 from "../../images/diagram1.png";
 import diagram2 from "../../images/diagram2.png";
+import diagram3 from "../../images/diagram3.png";
 
 export const Home = () => {
   return (
@@ -57,6 +58,10 @@ export const Home = () => {
           <li>
             <h5>Use Cases, Sequence Digram</h5>
             <img src={diagram2} />
+          </li>
+          <li>
+            <h3>Flight Routes:</h3>
+            <img src={diagram3} />
           </li>
         </li>
       </ul>
