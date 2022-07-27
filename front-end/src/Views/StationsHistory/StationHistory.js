@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import { formatDateTime } from "../../Utils/Utils";
 import { Operations } from "../../Constants/Consts";
+import { FaHistory} from "react-icons/fa";
 
 const style = {
   position: "absolute",
@@ -31,7 +32,10 @@ export const StationHistory = ({ station }) => {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Show History</Button>
+      <Button onClick={handleOpen}>
+        View History
+        <FaHistory style={{ "margin-left": "10px" }} />
+      </Button>
       <Modal open={open} onClose={() => setOpen(false)}>
         <Box sx={style} className="modal">
           <Typography id="modal-modal-title" variant="h6" component="h2">

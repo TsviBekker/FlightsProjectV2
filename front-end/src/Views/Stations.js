@@ -3,7 +3,7 @@ import { Loader } from "../Components/Loader/Loader";
 import { Operations } from "../Constants/Consts";
 import { formatPrepTime } from "../Utils/Utils";
 import { StationHistory } from "./StationsHistory/StationHistory";
-// import "../App.css";
+import { FaClock, FaPlane } from "react-icons/fa";
 
 export const Stations = () => {
   const [stations, setStations] = useState([]);
@@ -33,8 +33,12 @@ export const Stations = () => {
           <tr>
             <th>Station</th>
             <th>Status</th>
-            <th>Ocupied By</th>
-            <th>Preparation Time</th>
+            <th>
+              Ocupied By <FaPlane />
+            </th>
+            <th>
+              Preparation Time <FaClock />
+            </th>
           </tr>
         </thead>
 
@@ -64,12 +68,12 @@ const Station = ({ station }) => {
     <tr>
       <td>{station.name}</td>
       {station.flight ? (
-        <td style={{ color: "#00b040" }}>Available</td>
-      ) : (
         <td style={{ color: "red" }}>Unavailable</td>
+      ) : (
+        <td style={{ color: "#00b040" }}>Available</td>
       )}
-      <td>{station.flight ? station.flight.code : "NONE"}</td>
-      <td>{station.flight ? formatPrepTime(station.prepTime) : "_-_-_-_"}</td>
+      <td>{station.flight ? station.flight.code : ""}</td>
+      <td>{station.flight ? formatPrepTime(station.prepTime) : ""}</td>
       <td>
         <StationHistory station={station} />
       </td>

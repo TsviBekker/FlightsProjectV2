@@ -1,6 +1,7 @@
 ﻿using api_back_end.Context;
 using api_back_end.Context.Models;
 using back_end_api.Repository.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace back_end_api.Repository.Departing
 {
@@ -9,9 +10,9 @@ namespace back_end_api.Repository.Departing
         public DepartingFlightsRepository(FlightsDbContext context) : base(context)
         {
         }
-        public IEnumerable<DepartingFlight> GetActiveFlights()
+        public async Task<IEnumerable<DepartingFlight>> GetActiveFlights()
         {
-            return context.DepartingFlights.Where(df => df.LeaveDate == null);
+            return await context.DepartingFlights.Where(df => df.LeaveDate == null).ToListAsync();
         }
     }
 }

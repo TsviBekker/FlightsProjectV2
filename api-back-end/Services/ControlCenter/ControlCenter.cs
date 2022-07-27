@@ -31,11 +31,5 @@ namespace back_end_api.ControlCenter
             History = new HistoryRepository(context);
         }
         public Task<int> Complete() => context.SaveChangesAsync();
-
-        public void Dispose()
-        {
-            //GC.SuppressFinalize(context);
-            //context.Dispose();
-        }
     }
 }

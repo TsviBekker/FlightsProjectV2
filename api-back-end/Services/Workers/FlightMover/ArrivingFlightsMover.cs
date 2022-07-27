@@ -7,8 +7,8 @@ namespace api_back_end.Services.Workers.FlightMover
 {
     public class ArrivingFlightsMover
     {
-        private IControlCenter controlCenter;
-        private RouteManager routeManager;
+        private readonly IControlCenter controlCenter;
+        private readonly RouteManager routeManager;
         public ArrivingFlightsMover()
         {
             controlCenter = new ControlCenter(new FlightsDbContext());

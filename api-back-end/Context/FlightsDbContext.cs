@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using api_back_end.Context.Models;
 
 namespace api_back_end.Context
@@ -32,63 +29,5 @@ namespace api_back_end.Context
                 optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Flights;Integrated Security=True");
             }
         }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<ArrivingFlight>(entity =>
-        //    {
-        //        entity.HasOne(d => d.CurrentStationNavigation)
-        //            .WithMany(p => p.ArrivingFlightCurrentStationNavigations)
-        //            .HasForeignKey(d => d.CurrentStation)
-        //            .HasConstraintName("FK__ArrivingF__Curre__7F2BE32F");
-
-        //        entity.HasOne(d => d.Flight)
-        //            .WithMany(p => p.ArrivingFlights)
-        //            .HasForeignKey(d => d.FlightId)
-        //            .OnDelete(DeleteBehavior.ClientSetNull)
-        //            .HasConstraintName("FK__ArrivingF__Fligh__7E37BEF6");
-
-        //        entity.HasOne(d => d.NextStationNavigation)
-        //            .WithMany(p => p.ArrivingFlightNextStationNavigations)
-        //            .HasForeignKey(d => d.NextStation)
-        //            .HasConstraintName("FK__ArrivingF__NextS__00200768");
-        //    });
-
-        //    modelBuilder.Entity<DepartingFlight>(entity =>
-        //    {
-        //        entity.HasOne(d => d.CurrentStationNavigation)
-        //            .WithMany(p => p.DepartingFlightCurrentStationNavigations)
-        //            .HasForeignKey(d => d.CurrentStation)
-        //            .HasConstraintName("FK__Departing__Curre__7A672E12");
-
-        //        entity.HasOne(d => d.Flight)
-        //            .WithMany(p => p.DepartingFlights)
-        //            .HasForeignKey(d => d.FlightId)
-        //            .OnDelete(DeleteBehavior.ClientSetNull)
-        //            .HasConstraintName("FK__Departing__Fligh__797309D9");
-
-        //        entity.HasOne(d => d.NextStationNavigation)
-        //            .WithMany(p => p.DepartingFlightNextStationNavigations)
-        //            .HasForeignKey(d => d.NextStation)
-        //            .HasConstraintName("FK__Departing__NextS__7B5B524B");
-        //    });
-
-        //    modelBuilder.Entity<Flight>(entity =>
-        //    {
-        //        entity.Property(e => e.FlightId).ValueGeneratedNever();
-        //    });
-
-        //    modelBuilder.Entity<Station>(entity =>
-        //    {
-        //        entity.HasOne(d => d.FlightInStationNavigation)
-        //            .WithMany(p => p.Stations)
-        //            .HasForeignKey(d => d.FlightInStation)
-        //            .HasConstraintName("FK__Stations__Flight__76969D2E");
-        //    });
-
-        //    OnModelCreatingPartial(modelBuilder);
-        //}
-
-        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

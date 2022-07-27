@@ -3,7 +3,7 @@
     public static class Randomizer
     {
         private static readonly Random random = new Random();
-        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public static string GenerateCode()
         {
             int charCount = random.Next(1, 4);
@@ -12,9 +12,6 @@
             return $"{str}{num}";
         }
 
-        public static int GeneratePrepTime()
-        {
-            return random.Next(5, 15);
-        }
+        public static int GeneratePrepTime() => random.Next(5, 15);
     }
 }
